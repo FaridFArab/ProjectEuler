@@ -25,7 +25,7 @@ What is the value of the first triangle number to have over five hundred divisor
 import time
 
 
-def numdivisors(triangle):
+def num_divisors(triangle):
     factors = 0
     for i in range(1, int((triangle ** 0.5)) + 1):
         if triangle % i == 0:
@@ -33,17 +33,17 @@ def numdivisors(triangle):
     return factors * 2
 
 
-def maxtriangledivisors(max):
+def max_triangle_divisors(max):
     i = 1
     triangle = 0
     while i > 0:
         triangle += i
-        if numdivisors(triangle) >= max:
-            print('it was found number', triangle, 'triangle', i, 'with total of ', numdivisors(triangle), 'factors')
+        if num_divisors(triangle) >= max:
+            print('it was found number', triangle, 'triangle', i, 'with total of ', num_divisors(triangle), 'factors')
             return triangle
         i += 1
 
 
 # startTime = time.time()
-maxtriangledivisors(500)
+max_triangle_divisors(500)
 # print(time.time() - startTime)
